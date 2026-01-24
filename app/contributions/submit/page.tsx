@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
-import { useLanguage } from '@/lib/language-context';
 import { useRouter } from 'next/navigation';
 import { Spinner } from '@/components/ui/spinner';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,9 +16,8 @@ const MONTHLY_CONTRIBUTION = 1000; // Default monthly contribution amount in BDT
 
 export default function DepositSubmissionPage() {
   const { user, profile } = useAuth();
-  const { language } = useLanguage();
-  const router = useRouter();
   const { toast } = useToast();
+  const language = 'en'; // Default to English
 
   const [selectedMonths, setSelectedMonths] = useState<string[]>([]);
   const [paymentMethod, setPaymentMethod] = useState<'cash' | 'bank'>('cash');

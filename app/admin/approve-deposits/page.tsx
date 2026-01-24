@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouteGuard } from '@/lib/use-route-guard';
-import { useLanguage } from '@/lib/language-context';
 import { Spinner } from '@/components/ui/spinner';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -28,9 +27,8 @@ interface Deposit {
 
 export default function ApproveDepositsPage() {
   const { canAccess, isLoading } = useRouteGuard();
-  const { language } = useLanguage();
   const { toast } = useToast();
-
+  const language = 'en'; // Default to English
   const [deposits, setDeposits] = useState<Deposit[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'pending' | 'all'>('pending');
