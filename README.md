@@ -1,22 +1,28 @@
-# Steps - Community Fund Management Platform
+# STEPS - Community Fund Management Platform
 
-A modern, full-featured community fund management system built with Next.js, Supabase, and TypeScript.
+![STEPS Logo](public/steps-logo.png)
 
-## Features
+A modern, full-featured community fund management system built with **Next.js 16**, **Supabase**, **TypeScript**, and **Tailwind CSS**.
+
+> "Take STEPS Toward a Better Financial Future"
+
+## 🚀 Features
 
 ### Core Functionality
-- **Member Management**: Register, manage, and track community members
-- **Contribution Tracking**: Record and monitor member contributions (weekly, monthly, quarterly)
-- **Loan Management**: Create, approve, disburse, and track loans with interest calculations
+- **Member Management**: Register, approve, and manage community members
+- **Contribution Tracking**: Record and monitor member contributions
+- **Loan Management**: Create, approve, disburse, and track loans with calculations
+- **Profit Distribution**: Distribute profits based on member contributions
 - **Transaction History**: Maintain detailed records of all financial transactions
-- **Dashboard & Analytics**: Visual dashboards with charts and statistics
-- **Reports**: Generate comprehensive reports for analysis
+- **Dashboard & Analytics**: Visual dashboards with charts and real-time statistics
+- **Reports**: Generate comprehensive reports (CSV/Excel export)
 
 ### Authentication & Security
 - Supabase authentication with email/password
-- Role-based access control (Admin & Member roles)
+- Role-based access control (Member, Manager, Owner)
 - Protected routes with middleware
 - Secure API endpoints
+- Session management
 
 ### Notifications
 - Email notifications via Brevo (Sendinblue)
@@ -24,10 +30,19 @@ A modern, full-featured community fund management system built with Next.js, Sup
 - Automated alerts for loans, contributions, and transactions
 
 ### Admin Features
-- Manage all members
+- Manage all members and approve new registrations
 - Create and approve loans
-- Track contributions
+- Assign accountants for record keeping
+- Track contributions and distribute profits
 - View comprehensive dashboards
+- Generate reports
+
+### UI/UX
+- Dark mode and light mode support
+- Multi-language support (English & Bengali)
+- Mobile-responsive design
+- Accessible components
+- Smooth animations and transitions
 - Generate reports
 - Monitor system status
 
@@ -38,10 +53,10 @@ A modern, full-featured community fund management system built with Next.js, Sup
 - View transaction history
 - Update profile information
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **Frontend**: Next.js 16, React 19, TypeScript
-- **Backend**: Next.js API Routes
+- **Backend**: Next.js API Routes  
 - **Database**: Supabase (PostgreSQL)
 - **Authentication**: Supabase Auth
 - **Email**: Brevo API
@@ -49,23 +64,38 @@ A modern, full-featured community fund management system built with Next.js, Sup
 - **UI Components**: Shadcn/ui with Radix UI
 - **Charts**: Recharts
 - **Styling**: Tailwind CSS
+- **Package Manager**: pnpm
 
-## Setup Instructions
+## ⚡ Quick Start
 
-### 1. Prerequisites
-- Node.js 18+ and npm/pnpm
-- Supabase account
-- Brevo account (for email)
-- Meta Business account (for WhatsApp)
+### Prerequisites
+- Node.js 18+ and pnpm
+- Supabase account with PostgreSQL database
+- Environment variables configured
 
-### 2. Clone and Install
+### Installation
 
 ```bash
-cd "Steps website"
+# Install dependencies
 pnpm install
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Run development server
+pnpm dev
 ```
 
-### 3. Environment Variables
+Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+## 📋 Setup Instructions
+
+### 1. Database Setup
+Run the SQL schema files in your Supabase instance:
+- `database-setup.sql` - Core tables
+- `database-extended.sql` - Additional features (profit distribution, accountants)
+
+### 2. Environment Variables
 
 Create `.env.local` file in the root directory:
 
@@ -73,6 +103,7 @@ Create `.env.local` file in the root directory:
 # Supabase
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
+SUPABASE_SERVICE_KEY=your_service_key
 
 # Email Service (Brevo)
 BREVO_API_KEY=your_brevo_api_key
@@ -82,23 +113,41 @@ WHATSAPP_API_TOKEN=your_whatsapp_token
 WHATSAPP_PHONE_NUMBER_ID=your_phone_number_id
 ```
 
-### 4. Database Setup
-
-1. Go to your Supabase dashboard
-2. Open the SQL Editor
-3. Run the SQL from `lib/database-schema.sql`
-
-This will create all necessary tables with proper relationships and Row Level Security (RLS) policies.
-
-### 5. Run the Application
+### 3. Run the Application
 
 ```bash
+# Start development server
 pnpm dev
+
+# Build for production
+pnpm build
+
+# Run production server
+pnpm start
 ```
 
 The app will be available at `http://localhost:3000`
 
-## Project Structure
+## 📁 Project Structure
+
+```
+├── app/                    # Next.js App Router
+│   ├── admin/             # Admin pages
+│   ├── member/            # Member pages
+│   ├── api/               # API routes
+│   └── page.tsx           # Landing page
+├── components/            # React components
+│   ├── ui/               # Shadcn/ui components
+│   └── *.tsx             # Custom components
+├── lib/                   # Utilities and services
+│   ├── supabase.ts       # Supabase client
+│   ├── auth-context.tsx  # Auth provider
+│   ├── *-service.ts      # Business logic
+│   └── translations.ts    # Language support
+├── public/               # Static assets
+│   └── steps-logo.png    # STEPS logo
+└── database-*.sql        # Database schemas
+```## Project Structure
 
 ```
 ├── app/
