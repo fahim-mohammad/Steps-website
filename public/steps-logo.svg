@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Green curved shape (person) -->
+  <path d="M130 80C160 100 170 150 130 180C100 150 110 100 130 80Z" fill="#2D9B6B"/>
+  
+  <!-- Head circle -->
+  <circle cx="150" cy="50" r="18" fill="#2D9B6B"/>
+  
+  <!-- Left curved line -->
+  <path d="M80 100Q90 120 100 140" stroke="black" stroke-width="8" stroke-linecap="round" fill="none"/>
+  
+  <!-- Right curved line (outer) -->
+  <path d="M100 80Q115 100 110 140" stroke="black" stroke-width="8" stroke-linecap="round" fill="none"/>
+  
+  <!-- Right curved line (inner) -->
+  <path d="M105 85Q120 105 115 135" stroke="white" stroke-width="5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Small curved accent -->
+  <path d="M75 110Q85 100 95 105" stroke="black" stroke-width="6" stroke-linecap="round" fill="none"/>
+  
+  <!-- Dollar sign -->
+  <text x="100" y="125" font-size="24" font-weight="bold" fill="black" text-anchor="middle">$</text>
+  
+  <!-- STEPS text -->
+  <text x="100" y="170" font-size="48" font-weight="900" fill="black" text-anchor="middle" font-family="Arial, sans-serif">STEPS</text>
+  
+  <!-- FOR BETTER FUTURE text -->
+  <text x="100" y="195" font-size="10" font-weight="500" fill="#2D9B6B" text-anchor="middle" letter-spacing="3" font-family="Arial, sans-serif">FOR BETTER FUTURE</text>
+</svg>
