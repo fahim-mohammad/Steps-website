@@ -11,9 +11,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'STEPS - Community Fund Management',
-  description: 'STEPS: Secure, transparent, and collaborative community fund management. Manage contributions, loans, and grow together for a better future.',
-  generator: 'v0.app',
+  title: 'STEPS',
+  description: 'STEPS Fund is a private, transparent community savings and DPS management platform designed for members in Bangladesh to track contributions, manage funds, and grow together securely.',
   icons: {
     icon: [
       {
